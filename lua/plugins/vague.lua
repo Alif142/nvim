@@ -5,8 +5,9 @@ return {
         priority = 1000,
         config = function()
             vim.cmd("colorscheme vague")
+            vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
             require("vague").setup({
-                transparent = false, -- don't set background
+                transparent = true, -- don't set background
                 style = {
                     -- "none" is the same thing as default. But "italic" and "bold" are also valid options
                     boolean = "bold",
@@ -79,7 +80,7 @@ return {
                     operator = "#90a0b5",
                     keyword = "#6e94b2",
                     type = "#9bb4bc",
-                    search = "#405065",
+                    search = "#e8b589",
                     plus = "#8cb66d",
                     delta = "#f3be7c",
                 },
@@ -87,3 +88,5 @@ return {
         end,
     },
 }
+
+
