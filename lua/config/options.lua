@@ -36,4 +36,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank({ higroup = "IncSearch", timeout = 300 })
   end,
 })
+vim.g.netrw_browser_split = 0
+vim.g.netrw_banner = 0
+vim.g.netr_winsize = 25
 
