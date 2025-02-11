@@ -7,6 +7,7 @@ vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
+vim.opt.autoindent = true
 
 vim.opt.smartindent = true
 
@@ -36,7 +37,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank({ higroup = "IncSearch", timeout = 300 })
   end,
 })
+
+
 vim.g.netrw_browser_split = 0
 vim.g.netrw_banner = 0
 vim.g.netr_winsize = 25
-
+vim.cmd("let g:netrw_liststyle = 3")
+vim.opt.cursorline = true

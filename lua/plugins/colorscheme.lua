@@ -1,4 +1,4 @@
---[[
+
 
 return {
     {
@@ -91,8 +91,10 @@ return {
     },
 }
 
---]]
 
+--
+--
+--[[
 return {
     "drewxs/ash.nvim",
     lazy = false,
@@ -101,3 +103,5 @@ return {
         vim.cmd("colorscheme ash")
     end,
 }
+
+--]]
