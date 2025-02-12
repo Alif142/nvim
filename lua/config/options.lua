@@ -44,3 +44,8 @@ vim.g.netrw_banner = 0
 vim.g.netr_winsize = 25
 vim.cmd("let g:netrw_liststyle = 3")
 vim.opt.cursorline = true
+
+
+vim.schedule(function ()
+    vim.opt.clipboard = 'unnamedplus'
+end)
