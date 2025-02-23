@@ -11,7 +11,7 @@ return {
 
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "clangd", "jdtls" },
+                ensure_installed = { "lua_ls", "clangd", "jdtls","pyright" },
             })
         end,
     },
@@ -23,6 +23,7 @@ return {
             lspconfig.lua_ls.setup({ capabilities = capabilities })
             lspconfig.jdtls.setup({ capabilities = capabilities })
             lspconfig.clangd.setup({ capabilities = capabilities })
+            lspconfig.pyright.setup({ capabilities = capabilities })
 
             vim.keymap.set("n", "<leader>H", function()
                 vim.lsp.buf.hover()
