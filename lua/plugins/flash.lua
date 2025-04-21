@@ -1,4 +1,3 @@
--- Add this to your plugins configuration
 return {
     {
         "folke/flash.nvim",
