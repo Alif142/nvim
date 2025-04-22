@@ -15,6 +15,7 @@ return {
 
         -- Keymaps with Ivy theme applied
         vim.keymap.set("n", "<leader>ff", ivy_picker(builtin.find_files), { desc = "Find files (Ivy)" })
+        vim.keymap.set("n", "<leader>gf", ivy_picker(builtin.git_files), { desc = "Find git files (Ivy)" })
         vim.keymap.set("n", "<leader>fb", ivy_picker(builtin.buffers), { desc = "Find buffers (Ivy)" })
         vim.keymap.set("n", "<leader>fq", ivy_picker(builtin.quickfix), { desc = "Quickfix (Ivy)" })
         vim.keymap.set("n", "<leader>gr", ivy_picker(builtin.lsp_references), { desc = "LSP references (Ivy)" })
