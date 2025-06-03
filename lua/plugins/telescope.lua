@@ -28,5 +28,16 @@ return {
         vim.keymap.set("n", "<leader>fh", ivy_picker(builtin.help_tags), { desc = "Help tags (Ivy)" })
         vim.keymap.set("n", "<leader>fm", ivy_picker(builtin.man_pages), { desc = "Man pages (Ivy)" })
         vim.keymap.set("n", "<leader>fd", ivy_picker(builtin.diagnostics), { desc = "Diagnostics (Ivy)" })
+
+        require('telescope').setup {
+            defaults = {
+                mappings = {
+                    i = {
+                        ["<C-j>"] = "move_selection_next",
+                        ["<C-k>"] = "move_selection_previous",
+                    },
+                },
+            },
+        }
     end,
 }
