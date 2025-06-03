@@ -71,11 +71,27 @@ return { -- Autocompletion
 				--  This will expand snippets if the LSP sent a snippet.
 				["<C-y>"] = cmp.mapping.confirm({ select = true }),
 
-				-- If you prefer more traditional completion keymaps,
-				-- you can uncomment the following lines
-				--['<CR>'] = cmp.mapping.confirm { select = true },
-				--['<Tab>'] = cmp.mapping.select_next_item(),
-				--['<S-Tab>'] = cmp.mapping.select_prev_item(),
+                -- If you prefer more traditional completion keymaps,
+                -- you can uncomment the following lines
+                --['<CR>'] = cmp.mapping.confirm { select = true },
+                --
+                ["<Tab>"] = function(fallback)
+                    -- If Codeium has a suggestion, accept it
+                    if vim.fn["codeium#Accept"]() ~= "" then
+                        vim.api.nvim_feedkeys(vim.fn["codeium#Accept"](), "i", true)
+                        -- If nvim-cmp menu is visible, select next item
+                    elseif cmp.visible() then
+                        cmp.select_next_item()
+                        -- If a snippet can expand or jump, do it
+                    elseif luasnip.expand_or_jumpable() then
+                        luasnip.expand_or_jump()
+                        -- Otherwise, do regular <Tab>
+                    else
+                        fallback()
+                    end
+                end,
+
+                --['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
 				-- Manually trigger a completion from nvim-cmp.
 				--  Generally you don't need this, because nvim-cmp will display
@@ -113,6 +129,7 @@ return { -- Autocompletion
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "path" },
+                { name = "codeium" },
 			},
 		})
 	end,
