@@ -23,10 +23,10 @@ return {
         vim.keymap.set("n", "<leader>gc", ivy_picker(builtin.git_commits), { desc = "Git commits (Ivy)" })
         vim.keymap.set("n", "<leader>gb", ivy_picker(builtin.git_branches), { desc = "Git branches (Ivy)" })
         vim.keymap.set("n", "<leader>gs", ivy_picker(builtin.git_status), { desc = "Git status (Ivy)" })
+        vim.keymap.set("n", "<leader>fw", ivy_picker(builtin.current_buffer_fuzzy_find), { desc = "find word (Ivy)" })
 
         -- Additional pickers (customize as needed)
         vim.keymap.set("n", "<leader>fh", ivy_picker(builtin.help_tags), { desc = "Help tags (Ivy)" })
-        vim.keymap.set("n", "<leader>fm", ivy_picker(builtin.man_pages), { desc = "Man pages (Ivy)" })
         vim.keymap.set("n", "<leader>fd", ivy_picker(builtin.diagnostics), { desc = "Diagnostics (Ivy)" })
 
         require('telescope').setup {
