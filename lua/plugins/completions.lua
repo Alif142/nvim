@@ -130,6 +130,7 @@ return { -- Autocompletion
 				{ name = "luasnip" },
 				{ name = "path" },
                 { name = "codeium" },
+                { name = "friendly-snippets" },
 			},
 		})
 	end,

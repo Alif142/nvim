@@ -3,10 +3,6 @@ return{
     config = function()
       local mark = require("harpoon.mark")
       local ui = require("harpoon.ui")
-
-      -- Ensure Harpoon is loaded
-      require("harpoon").setup()
-
       -- Keybinds setup with proper options
       vim.keymap.set("n", "<leader>a", mark.add_file, { desc = "Harpoon: Add file", silent = true })
       vim.keymap.set("n", "<leader>e", ui.toggle_quick_menu, { desc = "Harpoon: Toggle menu", silent = true })
