@@ -11,7 +11,7 @@ return {
 
         config = function()
             require("mason-lspconfig").setup({
-                ensure_installed = { "lua_ls", "clangd", "jdtls", "pyright" , "html"  , "cssls" , "ts_ls" },
+                ensure_installed = { "lua_ls", "clangd", "jdtls", "pyright" , "html"  , "cssls" , "ts_ls" , "black" },
             })
         end,
     },
